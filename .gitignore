@@ -25,3 +25,4 @@ var/
 .idea/
 *.sqlite3
 api_writers/env_gw/
+api_books/env_m1/
