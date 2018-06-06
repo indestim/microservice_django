@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     # 'django.contrib.sessions',
     # 'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     'api_books'
 ]
 
@@ -123,6 +123,6 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'UNAUTHENTICATED_USER': None,
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'api_pills.auth.JSONAuthentication',
+        'api_books.auth.JSONAuthentication',
     )
 }
