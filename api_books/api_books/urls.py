@@ -13,9 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from rest_framework.routers import SimpleRouter
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+from api_books.api import BooksViewSet
+
+API_VERSION = 'v1/'
+
+router_books = SimpleRouter()
+router_books.register(API_VERSION + 'books', BooksViewSet, base_name='api_books_')
+
+urlpatterns = router_books.urls
