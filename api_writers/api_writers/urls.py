@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework_swagger.views import get_swagger_view
+
+from api_writers.views import BooksAPIProxyView
+
 API_VERSION = 'v1/'
 
+swagger_view = get_swagger_view(title='API Microservices')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +30,8 @@ urlpatterns = [
     # JWT
     path(API_VERSION + 'rest-auth/', include('rest_auth.urls')),
     path(API_VERSION + 'rest-auth/registration/', include('rest_auth.registration.urls')),
+
+    path(API_VERSION + 'books/', BooksAPIProxyView.as_view(), name='books_api'),
+
+    path(API_VERSION + 'doc', swagger_view),
 ]
