@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'django.contrib.sites',
     'api_writers',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,7 @@ REST_USE_JWT = True
 
 # no enviar email de verificación de cuenta
 ACCOUNT_EMAIL_VERIFICATION = "none"
+
+MICROSERVICES = {
+    'BooksMicroservice': "http://127.0.0.1:8080",
+}
