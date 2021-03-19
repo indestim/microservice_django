@@ -7,7 +7,7 @@ Django==2.0.6
 django-allauth==0.36.0
 django-rest-auth==0.9.3
 django-rest-framework-proxy==1.6.0
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 idna==2.6
 itypes==1.1.0
